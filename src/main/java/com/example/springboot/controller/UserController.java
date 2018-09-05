@@ -26,4 +26,9 @@ public class UserController {
     public List<User> selectUserAll () {
         return userService.selectUserAll();
     }
+    
+    @RequestMapping(value = "/dev")
+    public String dev () {
+        return "测试";
+    }
 }
