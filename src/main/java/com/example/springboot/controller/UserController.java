@@ -4,9 +4,7 @@ package com.example.springboot.controller;
 import com.example.springboot.modal.User;
 import com.example.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,4 +29,16 @@ public class UserController {
     public String dev () {
         return "测试";
     }
+
+
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    @CrossOrigin
+    public  Object login(User user ){
+        user.setUserName("admin");
+        user.setPassword("123456");
+        return user;
+    }
+
+
 }
